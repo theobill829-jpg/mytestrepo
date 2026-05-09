@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: youtube-downloader-api
+    env: node
+    region: oregon
+    buildCommand: |
+      pip install yt-dlp
+      apt-get update && apt-get install -y ffmpeg
+      npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.x
+      - key: PORT
+        value: "3000"
