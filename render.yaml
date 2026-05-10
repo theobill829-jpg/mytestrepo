@@ -4,7 +4,8 @@ services:
     env: node
     region: oregon
     buildCommand: |
-      pip install yt-dlp
+      curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+      chmod +x /usr/local/bin/yt-dlp
       apt-get update && apt-get install -y ffmpeg
       npm install
     startCommand: npm start
