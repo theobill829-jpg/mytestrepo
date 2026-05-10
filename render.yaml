@@ -3,11 +3,7 @@ services:
     name: youtube-downloader-api
     env: node
     region: oregon
-    buildCommand: |
-      curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-      chmod +x /usr/local/bin/yt-dlp
-      apt-get update && apt-get install -y ffmpeg
-      npm install
+    buildCommand: curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o yt-dlp && chmod +x yt-dlp && apt-get update && apt-get install -y ffmpeg && npm install
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
