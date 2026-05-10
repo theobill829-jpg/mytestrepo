@@ -1,0 +1,6 @@
+[build]
+builder = "nixpacks"
+buildCommand = "curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o yt-dlp && chmod +x yt-dlp && apt-get update && apt-get install -y ffmpeg && npm install"
+
+[deploy]
+startCommand = "npm start"
